@@ -1,8 +1,3 @@
-curriculum-advanced-python
-==========================
-
-Class curriculum for "Advanced Python"
-
 # Curriculum for *Advanced Python*
 
 This is the [Sphinx](http://sphinx.pocoo.org/) source code used to generate
