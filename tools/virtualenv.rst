@@ -12,10 +12,6 @@ virtualenv
 The term "virtualenv" can refer to the command ``virtualenv``, used to create a 
 virtual environment, or to the virutal environment itself.
 
-::
-  
-  $ sudo apt-get install python-virtualenv
-  
 
 virtualenvwrapper
 =================
@@ -28,7 +24,6 @@ than one project at a time without introducing conflicts in their dependencies [
 
 .. code-block:: console
 
-   $ sudo apt-get install virtualenvwrapper
    $ mkvirtualenv class
    New python executable in class/bin/python
    Installing distribute.............................................................................................................................................................................................done.
@@ -43,24 +38,24 @@ than one project at a time without introducing conflicts in their dependencies [
    distribute==0.6.24
    wsgiref==0.1.2
    
-Note that when the virtualenv is active, its name (in this case "class") is
-prepended to the shell prompt:
+Note that when the virtual environment is active, its name (in this case
+"class") is prepended to the shell prompt:
 
 .. code-block:: console
 
    $ # Ordinary shell prompt
-   (class)$ # Virtualenv "class" is active
+   (class)$ # Virtual environment "class" is active
 
 
-If later you have logged out, and want to activate this virtualenv, you can use
-the ``workon`` command:
+If later you have logged out, and want to activate this virtual environment, you
+can use the ``workon`` command:
 
 .. code-block:: console
 
    $ workon class
    (class)$
 
-You can deactivate the virtualenv with the ``deactivate`` command:
+You can deactivate the virtual environment with the ``deactivate`` command:
 
 .. code-block:: console
 
@@ -71,10 +66,10 @@ You can deactivate the virtualenv with the ``deactivate`` command:
 Location of Virtualenvs
 =======================
 
-By default, ``virtualenvwrapper`` stores your virtualenvs in ``~/.virtualenvs``.
-However you can control this by setting the ``WORKON_HOME`` environment
-variable.  This could potentially be used for shared virtualenvs, perhaps with
-group write permission.
+By default, ``virtualenvwrapper`` stores your virtual environments in
+``~/.virtualenvs``. However you can control this by setting the ``WORKON_HOME``
+environment variable.  This could potentially be used for shared virtual
+environments, perhaps with group write permission.
 
 .. code-block:: bash
 
