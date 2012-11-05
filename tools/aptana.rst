@@ -1,10 +1,14 @@
-******
-Aptana
-******
+*************
+Aptana Studio
+*************
 
-Aptana is a powerful IDE - integrated development environment - based on the
-`Eclipse framework`_.  It provides valuable tools for understanding, browsing, and
-refactoring your code.
+`Aptana Studio`_ is an IDE - `integrated development environment`_ - based on
+the `Eclipse framework`_.  It provides powerful tools for exploring,
+understanding, and refactoring your code.
+
+Because Aptana Studio is Eclipse + a plugin, in class I may refer to "Aptana"
+and "Eclipse" interchangeably.  Unless explicitly noted, both terms refer to the
+combination of Eclipse framework + Aptana Studio plugin.
 
 Aptana's Python support was formerly a separate Eclipse plugin called *PyDev*. 
 PyDev was purchased by Aptana and folded into Aptana Studio. Aptana can be
@@ -13,9 +17,28 @@ will download the whole application.
 
    http://aptana.com/products/studio3/download
 
-.. _`Aptana Studio`: http://aptana.com/
+.. _integrated development environment: http://en.wikipedia.org/wiki/Integrated_development_environment
+.. _Aptana Studio: http://aptana.com/
 .. _Eclipse framework: http://eclipse.org
 
+
+Harmless ``libjpeg`` Error
+==========================
+
+The first time you start Apatana Studio, you will get a frightening-looking
+error message, complaining that libjpeg.62.so is missing.  This error is
+actually quite harmless - it is caused by Aptana trying to display it's one-time
+splash screen after a new install.  To display the splash screen requires a JPEG
+graphic handling library that we have not installed.  
+
+This bug can be avoided entirely by installing ``libjpeg62``:
+
+.. code-block:: console
+
+   $ sudo apt-get install libjpeg62
+
+However this is not strictly necessary, as the bug does not damage anything, and
+appears only the first time a new Apatana installation is run.
 
 Installing Eclipse Plugins
 ==========================
@@ -45,6 +68,11 @@ Update site:
 Working with Virtual Environments
 =================================
 
-.. todo::
+Unfortunately, Aptana is not aware of virtual environments by default.  This can
+be worked around by manually configuring Aptana to use the Python interpreter
+from the virtual environment.  We will configure the interpreter in the course
+of starting a new project below.
 
-   Describe how to configure Apatana to work with virtualenv.
+
+Starting a New Project
+======================
