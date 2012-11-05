@@ -64,6 +64,15 @@ Update site:
 
    ``http://vrapper.sourceforge.net/update-site/stable``
 
+
+Python Perspective
+==================
+
+.. todo:: 
+
+   Describe what perspectives are, and how to select Python perspective,
+   including screenshots.
+
    
 Working with Virtual Environments
 =================================
@@ -76,3 +85,7 @@ of starting a new project below.
 
 Starting a New Project
 ======================
+
+.. todo:: 
+
+   Describe how to start a new project, including screenshots.
