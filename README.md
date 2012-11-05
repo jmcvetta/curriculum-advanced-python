@@ -3,5 +3,4 @@
 This is the [Sphinx](http://sphinx.pocoo.org/) source code used to generate
 curriculum notes for the class *Advanced Python*.
 
-You can view the latest version of the class notes at
-http://advanced-python.readthedocs.org.
+You can view the latest version of the class notes at [Read the Docs](http://advanced-python.readthedocs.org).
