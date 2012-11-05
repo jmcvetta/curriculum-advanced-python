@@ -21,7 +21,7 @@ Github API docs.
 
 .. _Oauth Section: http://developer.github.com/v3/oauth/#create-a-new-authorization
 
-.. literalinclude:: labs/authtoken.0.py
+.. literalinclude:: ../examples/authtoken/authtoken.0.py
    :linenos:
    :lines: 10-
 
@@ -44,7 +44,7 @@ We can protect the user's privacy while inputting their password with the
 note to describe how this token will be used.
 
 
-.. literalinclude:: labs/authtoken.1.py
+.. literalinclude:: ../examples/authtoken/authtoken.1.py
    :linenos:
    :lines: 10-
    :emphasize-lines: 5,15-16,22-23
@@ -74,7 +74,7 @@ debugger.  Start by parsing ``res.text`` into JSON, and examining the keys.
 The token lives in the creatively-named field ``token``.  We will extract it and
 print it for the user.
 
-.. literalinclude:: labs/authtoken.2.py
+.. literalinclude:: ../examples/authtoken/authtoken.2.py
    :linenos:
    :lines: 10-
    :emphasize-lines: 32-34
@@ -123,7 +123,7 @@ helpfully provides a ``message`` field with an error message.
 We can look for response codes >= 400 and present the user a friendly error
 message:
 
-.. literalinclude:: labs/authtoken.3.py
+.. literalinclude:: ../examples/authtoken/authtoken.3.py
    :linenos:
    :lines: 10-
    :emphasize-lines: 33-36
