@@ -1,6 +1,6 @@
-*****************
-Programming Tools
-*****************
+**********
+Tool Setup
+**********
 
 
 .. toctree::
@@ -10,4 +10,4 @@ Programming Tools
    virtualenv.rst
    aptana.rst
    python-packages.rst
-   git.rst
+   simulating-remote-hosts.rst

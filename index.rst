@@ -7,7 +7,7 @@ Class Curriculum for *Advanced Python*
    :maxdepth: 2
    
    intro.rst
-   tools/index.rst
+   setup/index.rst
    fabric.rst
    rest/index.rst
    django/index.rst
