@@ -17,6 +17,7 @@ The following packages are required to complete this course:
 ==========================   =======================================================
 Package                      Description
 ==========================   =======================================================
+argparse                     Command-line parsing library
 django                       Web application framework
 fabric                       SSH library and command line tool
 ipython                      Interactive Python shell
@@ -35,6 +36,7 @@ Use ``pip install`` to install the required packages, as well as their dependenc
 .. code-block:: console
 
    (class)$ sudo pip install \
+   argparse \
    django \
    fabric \
    ipython \
