@@ -22,6 +22,15 @@ will download the whole application.
 .. _Eclipse framework: http://eclipse.org
 
 
+Workspace
+=========
+
+When it starts up, Aptana will ask you what folder you want to use as a
+workspace.  The default is not very good, as its name contains spaces.  Instead
+use ``~/workspace``, the standard Eclipse workspace path.  You can tell Aptana
+to remember this workspace if you like.
+
+
 Harmless ``libjpeg`` Error
 ==========================
 
