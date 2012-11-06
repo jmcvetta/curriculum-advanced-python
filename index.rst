@@ -8,8 +8,9 @@ Class Curriculum for *Advanced Python*
    
    intro.rst
    tools/index.rst
-   django/index.rst
+   fabric.rst
    rest/index.rst
+   django/index.rst
    work-in-progress.rst
 
 
