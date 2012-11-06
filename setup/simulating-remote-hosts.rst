@@ -4,7 +4,6 @@
 Simulating Remote Hosts
 ***********************
 
-
 Some of the class examples involve communicating with remote unix servers. 
 Since the class will not necessarily have access to real remote servers, we will
 use ``/etc/hosts`` to simulate remote servers using only our local system.
@@ -148,8 +147,4 @@ login to any of our "remote" hosts without any keyboard interaction::
    logout
    Connection to seattle closed.
    student@sbtrain-vbox:~/.ssh$ 
-   
-   
-   
-   
    
