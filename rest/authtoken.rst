@@ -1,6 +1,6 @@
-************************
-Generate an OAuth2 Token
-************************
+******************************
+Generate a Github OAuth2 Token
+******************************
 
 There are two ways to authenticate with the GitHub API: HTTP basic auth, and
 OAuth2. [#f1]_  It is preferable to use OAuth2, so your script can run without

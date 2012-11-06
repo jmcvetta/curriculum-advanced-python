@@ -4,7 +4,7 @@
 
 
 Requests is an `ISC Licensed`_ HTTP library, written in Python, for
-human beings. [#cit1]_
+human beings. [#f1]_
 
 Requests takes all of the work out of Python HTTP/1.1 — making your integration
 with web services seamless. There's no need to manually add query strings to
@@ -15,25 +15,7 @@ pooling are 100%  automatic, powered by `urllib3
 .. _ISC Licensed: http://opensource.org/licenses/ISC
 
 
-Installation
-============
 
-Install *Requests* into your virtual environment with this command:
+.. rubric:: Footnotes
 
-.. code-block:: console
-
-   (class)$ pip install requests
-
-
-Lab Preparation
-===============
-
-The labs for this class require each student have their own Github_ account, so
-they can fully interact with the Github API.
-
-.. _Github: http://github.com
-
-
-.. rubric:: Citations
-
-.. [#cit1] http://docs.python-requests.org/
+.. [#f1] http://docs.python-requests.org/
