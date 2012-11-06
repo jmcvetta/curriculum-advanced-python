@@ -11,3 +11,4 @@ Tool Setup
    aptana.rst
    python-packages.rst
    simulating-remote-hosts.rst
+   lab-files.rst
