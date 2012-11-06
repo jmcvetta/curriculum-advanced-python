@@ -26,11 +26,12 @@ Background Assumptions
 Resources
 =========
 
-The source code for this curriculum can be found on Github_.
+The Sphinx_ source code for this curriculum can be found on Github_.
 
 The latest version this curriculum is published at `Read the Docs`_. It is also
 available in PDF_ and ePub_ formats.
 
+.. _Sphinx: http://sphinx.pocoo.org/
 .. _Github: http://github.com/jmcvetta/curriculum-advanced-python
 .. _Read the Docs: http://advanced-python.readthedocs.org/
 .. _PDF: https://media.readthedocs.org/pdf/advanced-python/latest/advanced-python.pdf
