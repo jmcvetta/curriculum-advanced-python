@@ -43,6 +43,10 @@ def main():
     #
     # Parse API response
     #
+    if res.status_code >= 400:
+        msg = res.json.get('message', 'Unknown Error')
+        print 'ERROR: %s' % msg
+        return
     for repo in res.json:
         name = repo['name']
         desc = repo['description']
