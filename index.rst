@@ -3,6 +3,7 @@ Class Curriculum for *Advanced Python*
 **************************************
 
 
+
 .. toctree::
    :maxdepth: 2
    
@@ -12,6 +13,7 @@ Class Curriculum for *Advanced Python*
    rest/index.rst
    django/index.rst
    work-in-progress.rst
+
 
 
 
