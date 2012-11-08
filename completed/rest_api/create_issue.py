@@ -13,8 +13,44 @@ GITHUB_API = 'https://api.github.com'
 import requests
 import argparse
 import json
+import sys
 from urlparse import urljoin
 
+
+def sanity_checks(args):
+    '''
+    Does various sanity checks, and reports errors if supplied args are not
+    reasonable.
+    '''
+    #
+    # Sanity checks
+    #
+    url = urljoin(GITHUB_API, 'users/%s' % args.owner)
+    res = requests.get(url)
+    if res.status_code >= 400:
+        print 'ERROR Unknown username: %s' % args.owner
+        sys.exit(101)
+    fragment = 'repos/%s/%s' % (args.owner, args.repo)
+    url = urljoin(GITHUB_API, fragment)
+    res = requests.get(url)
+    if res.status_code >= 400:
+        print 'ERROR Unknown repository: %s' % args.repo
+        sys.exit(102)
+    if args.milestone:
+        fragment = '/repos/%s/%s/milestones/%s' % (args.owner, args.repo, args.milestone)
+        url = urljoin(GITHUB_API, fragment)
+        res = requests.get(url)
+        if res.status_code >= 400:
+            print 'ERROR Unknown milestone: %s' % args.milestone
+            sys.exit(103)
+    if args.labels:
+        for label in args.labels:
+            fragment = '/repos/%s/%s/labels/%s' % (args.owner, args.repo, label)
+            url = urljoin(GITHUB_API, fragment)
+            res = requests.get(url)
+            if res.status_code >= 400:
+                print 'ERROR Unknown label: %s' % label
+                sys.exit(104)
 
 def main():
     #
@@ -47,35 +83,6 @@ def main():
         )
     args = parser.parse_args()
     #
-    # Sanity checks
-    #
-    url = urljoin(GITHUB_API, 'users/%s' % args.owner)
-    res = requests.get(url)
-    if res.status_code >= 400:
-        print 'ERROR Unknown username: %s' % args.owner
-        return
-    fragment = 'repos/%s/%s' % (args.owner, args.repo)
-    url = urljoin(GITHUB_API, fragment)
-    res = requests.get(url)
-    if res.status_code >= 400:
-        print 'ERROR Unknown repository: %s' % args.repo
-        return
-    if args.milestone:
-        fragment = '/repos/%s/%s/milestones/%s' % (args.owner, args.repo, args.milestone)
-        url = urljoin(GITHUB_API, fragment)
-        res = requests.get(url)
-        if res.status_code >= 400:
-            print 'ERROR Unknown milestone: %s' % args.milestone
-            return
-    if args.labels:
-        for label in args.labels:
-            fragment = '/repos/%s/%s/labels/%s' % (args.owner, args.repo, label)
-            url = urljoin(GITHUB_API, fragment)
-            res = requests.get(url)
-            if res.status_code >= 400:
-                print 'ERROR Unknown label: %s' % label
-                return
-    #
     # Compose REST request
     #
     fragment = '/repos/%s/%s/issues' % (args.owner, args.repo)
@@ -99,6 +106,7 @@ def main():
     # Parse API response
     #
     if res.status_code >= 400:
+        sanity_checks(args)
         msg = res.json.get('message', 'Unknown Error')
         print 'ERROR: %s' % msg
         return
