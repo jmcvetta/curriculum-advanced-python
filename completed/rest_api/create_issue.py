@@ -4,10 +4,10 @@
 # See http://directory.fsf.org/wiki/License:X11 for details.
 
 '''
-Lab - Create a new Github Issue from the command line.
+Creates a new Github Issue from the command line.
 '''
 
-TOKEN = '320a3ff095704ae57bc85bf78fd0cd873936db03'
+TOKEN = 'YOUR_TOKEN_GOES_HERE'
 GITHUB_API = 'https://api.github.com'
 
 import requests
@@ -75,25 +75,36 @@ def main():
             if res.status_code >= 400:
                 print 'ERROR Unknown label: %s' % label
                 return
-    return
     #
-    path = '/repos/python-class/sauthc1/issues'
-    url = urljoin(GITHUB_API, path)
+    # Compose REST request
+    #
+    fragment = '/repos/%s/%s/issues' % (args.owner, args.repo)
+    url = urljoin(GITHUB_API, fragment)
     headers = {
         'Authorization': 'token %s' % TOKEN
         }
     payload = {
-        'title': 'jmcvetta found a bug',
-        'body': 'bad stuff is happening',
+        'title': args.title,
         }
-    print url
-    print headers
+    if args.milestone:
+        payload['milestone'] = args.milestone
+    if args.labels:
+        payload['labels'] = args.labels
     res = requests.post(
         url,
         headers = headers,
         data = json.dumps(payload),
         )
-    print res.text
+    #
+    # Parse API response
+    #
+    if res.status_code >= 400:
+        msg = res.json.get('message', 'Unknown Error')
+        print 'ERROR: %s' % msg
+        return
+    num = res.json['number']
+    href = res.json['html_url']
+    print 'New issue #%s created:  %s' % (num, href)
 
 if __name__ == '__main__':
     main()
