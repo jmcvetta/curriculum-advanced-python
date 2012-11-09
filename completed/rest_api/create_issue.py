@@ -56,7 +56,7 @@ def main():
     #
     # Parse arguments
     #
-    parser = argparse.ArgumentParser(description='List Github repositories.')
+    parser = argparse.ArgumentParser(description='Create a new Issue on Github.')
     parser.add_argument('-o',
         required = True,
         dest = 'owner',
@@ -97,6 +97,8 @@ def main():
         payload['milestone'] = args.milestone
     if args.labels:
         payload['labels'] = args.labels
+    if args.body:
+        payload['body'] = args.body
     res = requests.post(
         url,
         headers = headers,
