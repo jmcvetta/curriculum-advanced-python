@@ -25,16 +25,16 @@ env.hosts = [
     ]
 
 @parallel
-def uptime(uts_list):
+def uptime():
     res = run('uptime')
     #
     # Now, examine the result and extract the average uptime
     #
 
 def main():
-    uts_list = [] # A list of uptime values
+    env['uts'] = [] # A list of uptime values
     # Use uts_list to collect uptime values from all your tasks
-    tasks.execute(uptime, uts_list) 
+    tasks.execute(uptime)
     # 
     # Now, calculate average uptime...
     #

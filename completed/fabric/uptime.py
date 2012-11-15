@@ -18,7 +18,7 @@ from fabric.api import parallel
 from fabric.network import disconnect_all
 
 
-pattern = re.compile(r'up\s+(?:(\d+)\s+ days, \s+)?(\d+):(\d+)')
+pattern = re.compile(r'up\s+(?:(\d+) days, \s+)?(\d+):(\d+)')
 
 env.hosts = [
     'newyork',
@@ -27,10 +27,8 @@ env.hosts = [
     ]
 
 
-@parallel
-def uptime(uts_list):
+def uptime():
     res = run('uptime')
-    print res
     match = pattern.search(res)
     if match:
         if match.group(1):
@@ -41,12 +39,13 @@ def uptime(uts_list):
         minutes = int(match.group(3))
         minutes += hours * 60
         minutes += days * 24 * 60
-        uts_list.append(minutes)
+        env['uts'].append(minutes)
 
 
 def main():
-    uts_list = []
-    tasks.execute(uptime, uts_list)
+    env['uts'] = []
+    tasks.execute(uptime)
+    uts_list = env['uts']
     if not uts_list:
         print "ERROR: Could not retrieve any uptime values"
         return 
