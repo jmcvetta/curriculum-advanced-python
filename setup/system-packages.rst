@@ -7,6 +7,9 @@ various useful libraries and applications.  Ubuntu, like most Linux systems,
 uses a `package manager`_ to control installation of software packages.  The
 Ubuntu package manager is called ``apt-get``.
 
+If you are using a version of Ubuntu other than 12.04, or a different unix
+system, the package names will probably be similar but not exactly the same.
+
 .. _package manager: http://en.wikipedia.org/wiki/Package_management_system
 
 
