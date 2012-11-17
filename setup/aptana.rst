@@ -26,9 +26,15 @@ Workspace
 =========
 
 When it starts up, Aptana will ask you what folder you want to use as a
-workspace.  The default is not very good, as its name contains spaces.  Instead
-use ``~/workspace``, the standard Eclipse workspace path.  You can tell Aptana
-to remember this workspace if you like.
+workspace.  The default is not very good, as its name contains spaces:
+
+.. image:: workspace.png
+
+
+Instead use ``~/workspace``, the standard Eclipse workspace path.  You can tell
+Aptana to remember this workspace if you like.
+
+.. image:: workspace2.png
 
 
 Harmless ``libjpeg`` Error
@@ -39,6 +45,14 @@ error message, complaining that libjpeg.62.so is missing.  This error is
 actually quite harmless - it is caused by Aptana trying to display it's one-time
 splash screen after a new install.  To display the splash screen requires a JPEG
 graphic handling library that we have not installed.  
+
+.. image:: error.png
+
+Click OK, and Eclipse will ask if you want to exit.  Say yes, wait for Eclipse
+to exit, then launch it again.  You will only see this error message the first
+time; thereafter, launch will be error-free.
+
+.. image:: exit.png
 
 This bug can be avoided entirely by installing ``libjpeg62``:
 
@@ -77,10 +91,21 @@ Update site:
 Python Perspective
 ==================
 
-.. todo:: 
+Eclipse refers to collections of windows (*views* in Eclipse terminology) and
+their arrangement on screen as a *perspective*.  There is a Python perspective
+available, pre-configured with the views one typically wants while working on
+Python code.
 
-   Describe what perspectives are, and how to select Python perspective,
-   including screenshots.
+You can select the Python perspective by going to the *perspective menu* - it is
+in the upper right corner of the window, and looks like a grid with a plus sign.
+Click on it, select "Other...", and choose "PyDev Perspective" from the ensuing
+dialog.
+
+.. image:: perspective-menu.png
+
+.. image:: open-pydev.png
+
+You will now be in the Python perspective.
 
    
 Working with Virtual Environments
@@ -95,6 +120,42 @@ of starting a new project below.
 Starting a New Project
 ======================
 
+Start a new project by clicking on the new project menu - it looks like a window
+with a plus sign - in the upper left corner of the window.  Click on the new
+project menu, and select "PyDev Project".
+
+.. image:: new-pydev-project.png
+
+A new project dialog will appear.  Fill in the name you want for your project,
+then click on the blue "Please configure an interpreter" link.  
+
+.. image:: new-project.dialog.png
+
+You will be taken to Eclipse's Python interpreter settings page.  
+
+.. image:: interpreters-dialog.png
+
+Click the "New..." button.  A select file dialog will open; go to your home
+folder.  Once there, right-click on the file list, and choose "Show Hidden
+Files" from the context menu.
+
+.. image:: show-hidden-files.png
+
+Click thru to select the ``python`` executable at ``~/.virtualenvs/class/bin/python``.
+
+.. image:: hidden-files.png
+
+Click OK, and you will return to the Select Interpreter dialog, which will look like this:
+
+.. image:: select-interpreter.png
+
+Click "OK", and you will return to the PyDev Project dialog.  From the
+"Interpreter" popup menu, choose "class", the virtualenv we just configured.
+
+.. image:: select-interpreter2.png
+
+
+
 .. todo:: 
 
-   Describe how to start a new project, including screenshots.
+   Finish New Project section
