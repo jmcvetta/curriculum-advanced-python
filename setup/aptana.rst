@@ -129,7 +129,7 @@ project menu, and select "PyDev Project".
 A new project dialog will appear.  Fill in the name you want for your project,
 then click on the blue "Please configure an interpreter" link.  
 
-.. image:: new-project.dialog.png
+.. image:: new-project-dialog.png
 
 You will be taken to Eclipse's Python interpreter settings page.  
 
@@ -154,8 +154,7 @@ Click "OK", and you will return to the PyDev Project dialog.  From the
 
 .. image:: select-interpreter2.png
 
+Click "Finish" and you will have successfully created a new project!   Your new
+project will now be visible in the Project Explorer view.
 
-
-.. todo:: 
-
-   Finish New Project section
+.. image:: success.png
