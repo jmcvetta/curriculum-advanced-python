@@ -158,3 +158,4 @@ Click "Finish" and you will have successfully created a new project!   Your new
 project will now be visible in the Project Explorer view.
 
 .. image:: success.png
+
