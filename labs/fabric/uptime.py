@@ -14,7 +14,6 @@ uptimes, and displays their average uptime for the user.
 from fabric import tasks
 from fabric.api import run
 from fabric.api import env
-from fabric.api import parallel
 from fabric.network import disconnect_all
 import re
 
@@ -24,7 +23,6 @@ env.hosts = [
     'localhost',
     ]
 
-@parallel
 def uptime():
     res = run('uptime')
     #
