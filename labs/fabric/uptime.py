@@ -18,7 +18,6 @@ env.hosts = [
     'localhost',
     ]
 
-
 def uptime():
     res = run('cat /proc/uptime')
     #
