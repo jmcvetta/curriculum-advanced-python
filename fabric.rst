@@ -126,7 +126,7 @@ File ``labs/fabric/uptime.py`` will get you started:
 
 .. literalinclude:: labs/fabric/uptime.py
    :linenos:
-   :lines: 6-
+   :lines: 2-
 
 
 .. rubric:: Footnotes
