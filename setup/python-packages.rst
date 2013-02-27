@@ -35,7 +35,7 @@ Use ``pip install`` to install the required packages, as well as their dependenc
 
 .. code-block:: console
 
-   (class)$ sudo pip install \
+   (class)$ pip install \
    argparse \
    django \
    fabric \
